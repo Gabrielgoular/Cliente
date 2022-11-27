@@ -41,10 +41,10 @@ public ResponseEntity<?>listaPorId(@PathVariable Long id){
 	this.ocorrenciaService.listaPorId(id);
 	return new ResponseEntity<>(HttpStatus.OK); 
 	}
-@PutMapping(path="/ocorrencia/{id}")
-public ResponseEntity<?>save(@PathVariable Long id){
-	this.ocorrenciaService.atualizar(null, id);
-	return new  ResponseEntity<>(HttpStatus.OK);
+@PutMapping(path="/ocorrencia")
+public ResponseEntity<Ocorrencia>Atualizar(@RequestBody Ocorrencia ocorrencia){
+	return new ResponseEntity<Ocorrencia>(this.ocorrenciaService.cadastrar(ocorrencia), HttpStatus.OK);
+}
 	
 }
-}
+

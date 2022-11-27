@@ -46,4 +46,9 @@ public ResponseEntity<?>save(@PathVariable Long id){
 	this.alunoService.atualizar(null, id);
 	return new ResponseEntity<>(HttpStatus.OK);
 	}
+public ResponseEntity<Aluno>Atualizar(@RequestBody Aluno aluno){
+	return new ResponseEntity <Aluno>(this.alunoService.cadastrar(aluno), HttpStatus.OK);
+	}
+
 }
+

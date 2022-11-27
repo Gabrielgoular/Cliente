@@ -41,10 +41,9 @@ public ResponseEntity<?>listaPorId(@PathVariable Long id){
 public ResponseEntity<Professor>salvar(@RequestBody Professor professor){
 	return new ResponseEntity<Professor>(this.professorService.cadastro(professor), HttpStatus.OK);
 	}
-@PutMapping(path="/professor/{id}")
-public ResponseEntity<?>save(@PathVariable Long id){
-	this.professorService.atualizar(null, id);
-	return new ResponseEntity<>(HttpStatus.OK);
-}
+@PutMapping(path="/professor")
+public ResponseEntity<Professor>Atualizar(@RequestBody Professor professor){
+	return new ResponseEntity<Professor>(this.professorService.cadastro(professor), HttpStatus.OK);
+	}
 
 }
